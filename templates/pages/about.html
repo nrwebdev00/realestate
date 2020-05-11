@@ -39,22 +39,20 @@
             commodi id libero eveniet harum perferendis laborum molestias quia.</p>
         </div>
         <div class="col-md-4">
-          
-
-          <div class="card">
-            <img class="card-img-top" src="{% static 'img/realtors/kyle.jpg' %}" alt="Seller of the month">
-            <div class="card-body">
-              <h5 class="card-title">Seller Of The Month</h5>
-              <h6 class="text-secondary">Kyle Brown</h6>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt amet, illo itaque similique repellat.
-                content.
-              </p>
-            </div>
-          </div>
+          {% if mvp_realtors %}
+            {% for mvp in mvp_realtors %}
+              <div class="card">
+                <img src="{{ mvp.photo.url  }}" alt="MVP Realtor {{ mvp.name }}" class="card-img-top">
+                <div class="card-body">
+                  <h5 class="card-title">Seller Of The Month</h5>
+                  <h6 class="text-secondary">{{ mvp.name }}</h6>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt amet, illo itaque similique repellat.
+                    content.</p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Work -->
   <section id="work" class="bg-dark text-white text-center">
