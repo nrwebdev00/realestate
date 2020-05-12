@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Real Estate Project</title>
+    <title>Real Estate 
+        {% block title %}{% endblock %}
+    </title>
 </head>
 <body>
     {% include 'partials/_topbar.html' %}
