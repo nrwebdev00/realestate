@@ -149,4 +149,7 @@ EMAIL_HOST_USER = 'reproject.email@gmail.com'
 EMAIL_HOST_PASSWORD = '1Peter56-12'
 EMAIL_USE_TLS=True
 
-django_heroku.settings(locals())
+try:
+    from .local_setting import *
+except ImportError:
+    pass
